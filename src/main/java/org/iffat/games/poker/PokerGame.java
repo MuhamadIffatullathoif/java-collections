@@ -3,6 +3,7 @@ package org.iffat.games.poker;
 import org.iffat.collections_method.Card;
 
 import java.util.*;
+import java.util.function.Consumer;
 
 public class PokerGame {
     private final List<Card> deck = Card.getStandardDeck();
@@ -27,7 +28,16 @@ public class PokerGame {
 
         deal();
         System.out.println("-".repeat(30));
-        pokerHands.forEach(System.out::println);
+        Consumer<PokerHand> checkHand = PokerHand::evalHand;
+        pokerHands.forEach(checkHand.andThen(System.out::println));
+
+        int cardDealt = playerCount * cardsInHand;
+        int cardsRemaining = deck.size() - cardDealt;
+
+        // remainingCards = new ArrayList<>(cardsRemaining);
+        remainingCards = new ArrayList<>(Collections.nCopies(cardsRemaining, null));
+        remainingCards.replaceAll(c -> deck.get(cardDealt + remainingCards.indexOf(c)));
+        Card.printDeck(remainingCards, "Remaining Cards", 2);
     }
 
     private void deal() {

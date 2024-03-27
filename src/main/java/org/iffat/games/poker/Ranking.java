@@ -2,7 +2,7 @@ package org.iffat.games.poker;
 
 public enum Ranking {
     NONE,
-    ONE_PIER,
+    ONE_PAIR,
     TWO_PAIR,
     THREE_OF_KIND,
     FULL_HOUSE,
