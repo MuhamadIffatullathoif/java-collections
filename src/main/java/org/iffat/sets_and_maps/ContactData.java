@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class ContactData {
     private static final String phoneData = """
-            Charile Brown, 3334445555,
+            Charlie Brown, 3334445555,
             Maid Marion, 1234567890,
             Micky Mouse, 9998887777,
             Micky Mouse, 1247489758,
