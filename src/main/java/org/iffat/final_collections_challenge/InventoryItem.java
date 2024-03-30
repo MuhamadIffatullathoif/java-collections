@@ -55,6 +55,7 @@ public class InventoryItem {
 
     @Override
     public String toString() {
-        return "%s, $%.2f : [%04d, % 2d]".formatted(product, product, qtyTotal, qtyReserved);
+        return "%s, $%.2f : [%04d,% 2d]".formatted(product, price, qtyTotal,
+                qtyReserved);
     }
 }
